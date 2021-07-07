@@ -1,0 +1,4 @@
+s3_bucket: "test1-vishu"
+state_key: "terraform.tfstate"
+aws_region: "ap-south-1"
+instance_state: present
