@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  become: true
+  vars:
+    bucket_name: sample-vishu3452
+    state: present
+    access_key: 
+    aws_secret: 
+    aws_region: ap-south-1
+
+  tasks:
+    - name: Install boto3
+      pip:
+        name: boto3
+        state: present
+    - name: Create S3 bucket
+      s3_bucket: 
+        name: "{{ bucket_name }}"
+        aws_access_key: "{{ access_key }}"
+        aws_secret_key: "{{ aws_secret }}"
+        state: "{{ state }}"
+        region: "{{ aws_region }}"
+
